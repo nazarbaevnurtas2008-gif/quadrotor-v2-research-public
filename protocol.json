@@ -1,0 +1,250 @@
+{
+  "status": "DEVELOPMENT ONLY: controllers are provisional; NOT FINAL FROZEN",
+  "source": "reconstructed implementation from V1 manuscript and working protocol; prior allocator audit",
+  "allocator": "collective priority: fixed f0=f2=T/4, feasible roll-torque clipping; no pitch/yaw commands",
+  "plant": {
+    "dt": 0.01,
+    "motor_tau": 0.045,
+    "nominal_mass": 1.5,
+    "arm_m": 0.23,
+    "max_thrust_per_rotor_N": 12.0,
+    "model_reconstruction_assumptions": [
+      "linear_drag=0.12",
+      "angular_damping=0.015",
+      "derivative_filter_tau=.04",
+      "PID kaw=.5",
+      "km/kf=.02"
+    ]
+  },
+  "measurement": {
+    "z_std_m": 0.003,
+    "roll_std_deg": 0.05,
+    "train_noise_seeds": [
+      761001,
+      761002
+    ],
+    "train_delays_ms": [
+      0,
+      30
+    ],
+    "gate_noise_seeds": [
+      990001,
+      990002,
+      990003
+    ],
+    "gate_delays_ms": [
+      0,
+      10,
+      30
+    ]
+  },
+  "training_scenarios": [
+    {
+      "name": "D1",
+      "plant": [
+        1.5,
+        5.0,
+        0.0,
+        0.0,
+        0.0,
+        4.0,
+        5.0
+      ],
+      "uncertainty_scales": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "name": "D2",
+      "plant": [
+        1.7,
+        8.0,
+        -0.8,
+        3.0,
+        0.025,
+        4.0,
+        5.0
+      ],
+      "uncertainty_scales": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "name": "D3",
+      "plant": [
+        2.2,
+        5.0,
+        0.0,
+        0.0,
+        0.0,
+        4.0,
+        5.0
+      ],
+      "uncertainty_scales": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "name": "D4",
+      "plant": [
+        1.4,
+        7.0,
+        -1.0,
+        4.0,
+        -0.02,
+        4.0,
+        5.0
+      ],
+      "uncertainty_scales": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "name": "D5",
+      "plant": [
+        2.35,
+        9.0,
+        -1.2,
+        5.0,
+        0.05,
+        3.5,
+        5.5
+      ],
+      "uncertainty_scales": [
+        1.18,
+        1.2,
+        1.07,
+        0.93
+      ]
+    },
+    {
+      "name": "D6",
+      "plant": [
+        1.3,
+        10.0,
+        -0.8,
+        5.5,
+        -0.055,
+        4.0,
+        6.0
+      ],
+      "uncertainty_scales": [
+        0.85,
+        0.8,
+        0.9,
+        1.06
+      ]
+    }
+  ],
+  "gate_scenarios": [
+    {
+      "name": "G1",
+      "plant": [
+        1.92,
+        6.0,
+        -1.1,
+        4.5,
+        0.035,
+        3.5,
+        5.5
+      ],
+      "uncertainty_scales": [
+        1.08,
+        1.05,
+        1.02,
+        0.97
+      ]
+    },
+    {
+      "name": "G2",
+      "plant": [
+        2.48,
+        9.0,
+        -1.4,
+        5.7,
+        -0.055,
+        4.0,
+        5.0
+      ],
+      "uncertainty_scales": [
+        1.23,
+        0.75,
+        1.1,
+        0.91
+      ]
+    },
+    {
+      "name": "G3",
+      "plant": [
+        2.05,
+        10.0,
+        1.0,
+        6.0,
+        0.07,
+        4.0,
+        6.0
+      ],
+      "uncertainty_scales": [
+        0.9,
+        1.25,
+        0.85,
+        1.04
+      ]
+    },
+    {
+      "name": "G4",
+      "plant": [
+        1.45,
+        5.0,
+        -0.3,
+        2.5,
+        -0.025,
+        3.0,
+        5.0
+      ],
+      "uncertainty_scales": [
+        1.1,
+        1.0,
+        1.0,
+        0.96
+      ]
+    }
+  ],
+  "primary_metrics": [
+    "stability",
+    "altitude settling time",
+    "altitude overshoot",
+    "altitude IAE",
+    "roll IAE",
+    "control effort uRMS",
+    "rotor saturation",
+    "final altitude error"
+  ],
+  "known_challenges": [
+    "S1",
+    "S2",
+    "S3"
+  ],
+  "known_challenge_used_to_tune": false,
+  "final_100_condition_set": "NOT GENERATED OR INSPECTED",
+  "limitations": [
+    "training cases are not independent",
+    "gate is diagnostic not final held-out",
+    "noise Gaussian IID and delay quantization assumed, not experimental sensors",
+    "altitude and roll loops only; uncontrolled x-y/yaw",
+    "method uses same measurement observations but not necessarily same CPU tuning budget",
+    "LQR rate filtering and motor predictor are nominal model-based"
+  ]
+}

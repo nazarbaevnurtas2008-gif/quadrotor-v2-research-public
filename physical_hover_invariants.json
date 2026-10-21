@@ -1,0 +1,11 @@
+{
+  "hover_nominal_mass_kg": 1.5,
+  "hover_collective_N": 14.715,
+  "per_rotor_N": 3.67875,
+  "omega_hover_rad_s": 525.9968215208149,
+  "nominal_max_omega_rad_s": 950.0,
+  "hover_derivative_inf_norm": 1.7763568394002505e-15,
+  "model_rotor_thrust_cap_at_scale_1": 12.0,
+  "model_rotor_thrust_cap_at_scale_1_08": 12.96,
+  "nominal_hover_equilibrium": true
+}

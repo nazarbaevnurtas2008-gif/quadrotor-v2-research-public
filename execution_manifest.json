@@ -1,0 +1,8 @@
+{
+  "freeze_hash": "3ab3904bedd8aca22957292fb3aba4f49430b13afd992915732c40a15c1c062b",
+  "final_seed": 4229883130818374818,
+  "N": 100,
+  "controllers": 4,
+  "final_trial_rows": 400,
+  "conditions_sha256": "e1e9967240338d262221b10afe2375ba297a14a4dcb45e297ac5228bc194d90e"
+}

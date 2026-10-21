@@ -1,0 +1,228 @@
+{
+  "summary": [
+    {
+      "controller": "Carefully tuned conventional PID",
+      "n": 100,
+      "altitude_task_pass": 95,
+      "pass_rate": 0.95,
+      "wilson_ci_95": [
+        0.8882495307680808,
+        0.9784563208456319
+      ],
+      "mean_settle_s_report_censored_at_12s": 2.4681,
+      "not_settled_by_12s_count": 0,
+      "mean_altitude_IAE_m_s": 1.5138216533381041,
+      "mean_roll_IAE_deg_s": 9.25635753020433,
+      "max_horizontal_drift_m": 19.176224667541902,
+      "max_abs_unwrapped_yaw_deg": 1.5136712690063072,
+      "mean_actuator_saturation_pct": 2.3505412156536223
+    },
+    {
+      "controller": "Performance Auto-PID",
+      "n": 100,
+      "altitude_task_pass": 95,
+      "pass_rate": 0.95,
+      "wilson_ci_95": [
+        0.8882495307680808,
+        0.9784563208456319
+      ],
+      "mean_settle_s_report_censored_at_12s": 2.4907000000000004,
+      "not_settled_by_12s_count": 0,
+      "mean_altitude_IAE_m_s": 1.5231638638995335,
+      "mean_roll_IAE_deg_s": 9.677066885288173,
+      "max_horizontal_drift_m": 17.11550339302317,
+      "max_abs_unwrapped_yaw_deg": 8.116917530313282,
+      "mean_actuator_saturation_pct": 2.4129891756869277
+    },
+    {
+      "controller": "Robust Auto-PID",
+      "n": 100,
+      "altitude_task_pass": 93,
+      "pass_rate": 0.93,
+      "wilson_ci_95": [
+        0.8625048526092651,
+        0.9656807389327273
+      ],
+      "mean_settle_s_report_censored_at_12s": 2.3867999999999996,
+      "not_settled_by_12s_count": 0,
+      "mean_altitude_IAE_m_s": 1.4626275351417226,
+      "mean_roll_IAE_deg_s": 11.255013577767697,
+      "max_horizontal_drift_m": 14.364354903449076,
+      "max_abs_unwrapped_yaw_deg": 13.383966375618435,
+      "mean_actuator_saturation_pct": 2.4271440466278102
+    },
+    {
+      "controller": "Actuator-aware Integral LQR",
+      "n": 100,
+      "altitude_task_pass": 99,
+      "pass_rate": 0.99,
+      "wilson_ci_95": [
+        0.9455138038212946,
+        0.9982325679358593
+      ],
+      "mean_settle_s_report_censored_at_12s": 2.364,
+      "not_settled_by_12s_count": 0,
+      "mean_altitude_IAE_m_s": 1.4610865287268127,
+      "mean_roll_IAE_deg_s": 19.239648619667324,
+      "max_horizontal_drift_m": 18.69034528071305,
+      "max_abs_unwrapped_yaw_deg": 509.75594933944285,
+      "mean_actuator_saturation_pct": 5.848459616985845
+    }
+  ],
+  "paired_planned": [
+    {
+      "comparison": "Performance Auto-PID minus Carefully tuned conventional PID",
+      "baseline_only_success": 0,
+      "target_only_success": 0,
+      "mcnemar_exact_two_sided_p": 1.0,
+      "continuous_metrics": {
+        "settling_s": {
+          "paired_mean_difference_target_minus_baseline": 0.022599999999999995,
+          "bootstrap_CI_95": [
+            0.018100000000000005,
+            0.026899999999999983
+          ]
+        },
+        "altitude_IAE_m_s": {
+          "paired_mean_difference_target_minus_baseline": 0.00934221056142915,
+          "bootstrap_CI_95": [
+            0.007642998437699631,
+            0.011009493466115511
+          ]
+        },
+        "roll_IAE_deg_s": {
+          "paired_mean_difference_target_minus_baseline": 0.4207093550838452,
+          "bootstrap_CI_95": [
+            -0.045641645103796175,
+            1.0361305846724136
+          ]
+        },
+        "max_abs_unwrapped_yaw_deg": {
+          "paired_mean_difference_target_minus_baseline": 0.29601254011789285,
+          "bootstrap_CI_95": [
+            0.17732819905422664,
+            0.4626229619288342
+          ]
+        },
+        "max_horizontal_drift_m": {
+          "paired_mean_difference_target_minus_baseline": -0.3366099325319113,
+          "bootstrap_CI_95": [
+            -0.47467670724232314,
+            -0.2059673314900624
+          ]
+        },
+        "saturation_pct": {
+          "paired_mean_difference_target_minus_baseline": 0.062447960033305605,
+          "bootstrap_CI_95": [
+            0.04995836802664448,
+            0.07577019150707744
+          ]
+        }
+      },
+      "mcnemar_holm_adjusted_p": 1.0
+    },
+    {
+      "comparison": "Robust Auto-PID minus Carefully tuned conventional PID",
+      "baseline_only_success": 2,
+      "target_only_success": 0,
+      "mcnemar_exact_two_sided_p": 0.5,
+      "continuous_metrics": {
+        "settling_s": {
+          "paired_mean_difference_target_minus_baseline": -0.08130000000000001,
+          "bootstrap_CI_95": [
+            -0.10280000000000003,
+            -0.05300000000000002
+          ]
+        },
+        "altitude_IAE_m_s": {
+          "paired_mean_difference_target_minus_baseline": -0.05119411819638195,
+          "bootstrap_CI_95": [
+            -0.05801331066460177,
+            -0.04416721593238716
+          ]
+        },
+        "roll_IAE_deg_s": {
+          "paired_mean_difference_target_minus_baseline": 1.9986560475633692,
+          "bootstrap_CI_95": [
+            1.330309950366183,
+            2.9120751550516095
+          ]
+        },
+        "max_abs_unwrapped_yaw_deg": {
+          "paired_mean_difference_target_minus_baseline": 0.38161814204005523,
+          "bootstrap_CI_95": [
+            0.17204535275973576,
+            0.6862617365603396
+          ]
+        },
+        "max_horizontal_drift_m": {
+          "paired_mean_difference_target_minus_baseline": -1.3232836076841665,
+          "bootstrap_CI_95": [
+            -1.6053922754846215,
+            -1.0459687333285623
+          ]
+        },
+        "saturation_pct": {
+          "paired_mean_difference_target_minus_baseline": 0.07660283097418819,
+          "bootstrap_CI_95": [
+            0.057452123230641125,
+            0.09658617818484601
+          ]
+        }
+      },
+      "mcnemar_holm_adjusted_p": 1.0
+    },
+    {
+      "comparison": "Actuator-aware Integral LQR minus Carefully tuned conventional PID",
+      "baseline_only_success": 0,
+      "target_only_success": 4,
+      "mcnemar_exact_two_sided_p": 0.125,
+      "continuous_metrics": {
+        "settling_s": {
+          "paired_mean_difference_target_minus_baseline": -0.10410000000000003,
+          "bootstrap_CI_95": [
+            -0.296605,
+            0.09781999999999973
+          ]
+        },
+        "altitude_IAE_m_s": {
+          "paired_mean_difference_target_minus_baseline": -0.052735124611291616,
+          "bootstrap_CI_95": [
+            -0.0985953557402972,
+            -0.006129051599765372
+          ]
+        },
+        "roll_IAE_deg_s": {
+          "paired_mean_difference_target_minus_baseline": 9.983291089462993,
+          "bootstrap_CI_95": [
+            5.117789149142885,
+            15.469012006874575
+          ]
+        },
+        "max_abs_unwrapped_yaw_deg": {
+          "paired_mean_difference_target_minus_baseline": 32.87900782065168,
+          "bootstrap_CI_95": [
+            15.025806982151295,
+            54.111429044505606
+          ]
+        },
+        "max_horizontal_drift_m": {
+          "paired_mean_difference_target_minus_baseline": -1.4086029648515044,
+          "bootstrap_CI_95": [
+            -1.9080382119880503,
+            -0.9125968108170214
+          ]
+        },
+        "saturation_pct": {
+          "paired_mean_difference_target_minus_baseline": 3.497918401332222,
+          "bootstrap_CI_95": [
+            1.8859075770191505,
+            5.39140299750208
+          ]
+        }
+      },
+      "mcnemar_holm_adjusted_p": 0.375
+    }
+  ],
+  "statistical_scope": "100 independent synthetic draws shared by all controllers; not empirical flight-safety inference"
+}

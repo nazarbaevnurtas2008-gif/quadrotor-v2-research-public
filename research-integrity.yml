@@ -1,0 +1,41 @@
+name: Research integrity checks
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    name: Frozen data and physical invariants
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+          cache-dependency-path: frozen_evidence/frozen_source/requirements.txt
+
+      - name: Install simulation dependencies
+        run: python -m pip install -r frozen_evidence/frozen_source/requirements.txt
+
+      - name: Verify frozen dataset structure and pass rates
+        run: python verify_public_release.py
+
+      - name: Run unit and integrity checks
+        run: python -m unittest discover -s tests -v
+
+      - name: Nominal hover sanity calculation
+        run: python physical_hover_invariants.py
+
+      - name: Check release SHA-256 manifest
+        run: sha256sum -c SHA256SUMS.txt

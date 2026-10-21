@@ -1,0 +1,13 @@
+{
+  "completed_replays": 400,
+  "elapsed_seconds": 12.46,
+  "overall_max_abs_z_m": 2.4997677334677064,
+  "overall_min_z_m": -0.003108270147111461,
+  "altitude_guard_passes": 400,
+  "pass_agreement": 400,
+  "saved_metric_replay_passes": 400,
+  "failures": [],
+  "source_hash_verified": true,
+  "original_results_modified": false,
+  "note": "Exact replay of existing 100 frozen condition rows and shared noise, not a new held-out sample."
+}

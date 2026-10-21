@@ -1,0 +1,88 @@
+{
+  "frozen_files_sha256": {
+    "fair_retuning.py": "ea3d64db1407968bf84e011a115e222a2b35ff318e748985b33c4cd6ba04866c",
+    "reference_model/measurement_allocator_audit.py": "d420b12bc99319b8b7ae5d69443a7c43e7f8c6aa1a8e1dde9916e25587d7408d",
+    "reference_model/v2_lqr_development.py": "8fb714bb465a9e2d3efcf23fd9a73f77f8f61bb0993edc272a728782907397e0",
+    "protocol.json": "373b43c63c22270f314f8f2fac97d7540c9cbe1f46916cd612cd113e5f2f859a",
+    "conventional_selected.json": "47444aa37e008fcb5a2db18a0c75fddb5daa19e4ec5739c624ed48c91515ae5d",
+    "performance_selected.json": "9207d2f76b8d122a3b371fb24b84fb199be334a7651b5d05bbd6bc6a4391ecbb",
+    "robust_selected.json": "e3be4ae21ca7b325fffe5793ee14130f37a8b6a97a03c24a1648346a4fdc2c6a",
+    "lqr_selected.json": "bbb067924646c4de9085eb62e19bd26a087aa2a05d2a88a3a4de6d719917a463",
+    "paired_development_and_gate_trials.csv": "e22f847a25db6ebff15e796afebb503879e3f98a6e725d23e52ea808938efc85",
+    "comparison_summary.csv": "cfe74914a5f1f382d415e83a20513741293caaaf4f1b6f3f0914a8cee2670e13",
+    "requirements.txt": "95e51b342ca9631e14d1afe1871b70d2457500c2e1b864cb25c5b2c4e6c4183a"
+  },
+  "controllers": {
+    "Carefully tuned conventional PID": {
+      "type": "PID",
+      "altitude": [
+        30.852966762779346,
+        15.993699168139848,
+        12.456663686155485
+      ],
+      "roll": [
+        0.976857828258608,
+        0.013845227476728237,
+        0.28274321385081336
+      ]
+    },
+    "Performance Auto-PID": {
+      "type": "PID",
+      "altitude": [
+        31.0451998063687,
+        15.995610849101528,
+        12.53322417020065
+      ],
+      "roll": [
+        1.151447969346814,
+        0.027056218294865562,
+        0.3462089268904988
+      ]
+    },
+    "Robust Auto-PID": {
+      "type": "PID",
+      "altitude": [
+        29.723126753564713,
+        15.735498643232075,
+        11.74874475085188
+      ],
+      "roll": [
+        1.0901053348713154,
+        0.09859489380805417,
+        0.3748581940542618
+      ]
+    },
+    "Actuator-aware Integral LQR": {
+      "type": "LQI",
+      "altitude_K": [
+        46.1908062572453,
+        19.76292051827165,
+        0.6504038188599117,
+        10.669694472327974
+      ],
+      "roll_K": [
+        3.226143829384172,
+        1.0801796636179524,
+        0.9809728522226618,
+        0.3984057300632065
+      ],
+      "altitude_Q": [
+        300.0,
+        30.0,
+        0.1,
+        20.0
+      ],
+      "altitude_R": 0.15,
+      "roll_Q": [
+        60.0,
+        5.0,
+        0.01,
+        1.0
+      ],
+      "roll_R": 5.0
+    }
+  },
+  "distribution_protocol_version": "future_final_100_v2_preregister_1",
+  "commitment_tag": "NOT GENERATE/EXAMINE FINAL CONDITIONS UNTIL EXPLICIT FINAL EXECUTION",
+  "future_final_runner_sha256": "4d6720bf78ea552a2034b1b1210163501202cb0a60709d6c5c72b51f812e332a"
+}
