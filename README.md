@@ -44,10 +44,16 @@ Dr. Ali Nasir offered preliminary methodological feedback but is not a superviso
 
 **Research integrity:** [CI workflow](.github/workflows/research-integrity.yml), [reproducibility checksums](SHA256SUMS.txt), [scope and attribution](CONTRIBUTIONS_AND_AI.md). CI consistency checks are not evidence of physical flight safety.
 
-## Publish and cite
+## Archive, DOI and citation
 
-`CITATION.cff` identifies this as an **unpublished research report**. At creation of this snapshot, no DOI had been assigned or journal acceptance claimed. Code is offered under MIT only to the extent of the author's rights, while the owner's original manuscript text, figures and result tables are offered under CC BY 4.0. See [`LICENSE`](LICENSE) and [`LICENSE-CONTENT.md`](LICENSE-CONTENT.md) for the distinct scope, third-party exclusions and AI-assisted work limitations. Any later Zenodo DOI should be verified in a published record; DOI does not imply peer review.
+[![Zenodo DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23562460.svg)](https://doi.org/10.5281/zenodo.23562460)
+
+The **public GitHub release** [`v2.0.0-research-artifact`](https://github.com/nazarbaevnurtas2008-gif/quadrotor-v2-research-public/releases/tag/v2.0.0-research-artifact) was published on 22 October 2026. Zenodo's GitHub integration displayed the DOI **[10.5281/zenodo.23562460](https://doi.org/10.5281/zenodo.23562460)** for this repository on the same date. See [`CITATION.cff`](CITATION.cff) for the citation metadata.
+
+**Citation status:** This is a Zenodo-archived, **unpublished simulation research artifact**, not a peer-reviewed journal article. The DOI does not imply scientific endorsement, flight validation, or independent review. The release contains a reconstructed model, not original recovered plant source code.
+
+Code is offered under MIT only to the extent of the author's rights, while the author's original manuscript text, figures, and result tables are offered under CC BY 4.0. See [`LICENSE`](LICENSE) and [`LICENSE-CONTENT.md`](LICENSE-CONTENT.md) for scope, third-party exclusions, and AI-assisted material limitations.
 
 ## Publication status
 
-This release-candidate snapshot contains **no imported Git history**. GitHub repository visibility and Zenodo DOI issuance must be checked on their respective services; neither is implied by this archive. Owners must review rights, scientific limitations, and commit identity before publishing. This artifact is not a flight-safety certification.
+This public repository was assembled from a clean snapshot without importing the older private repository's Git history. The DOI metadata in this **main branch** was added **after** the tagged `v2.0.0-research-artifact` release; the tagged archive remains a frozen snapshot. Researcher contributions and AI assistance are disclosed in [`CONTRIBUTIONS_AND_AI.md`](CONTRIBUTIONS_AND_AI.md). GitHub Actions verifies internal consistency, not independent scientific correctness or flight safety.

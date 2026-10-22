@@ -1,8 +1,11 @@
 cff-version: 1.2.0
-message: "Please cite this as an unpublished simulation research report, not a peer-reviewed journal article."
+message: "Please cite this Zenodo-archived simulation research artifact as an unpublished report, not a peer-reviewed journal article."
 title: "Robust Control of a Nonlinear Quadrotor under Payload and Model Uncertainty: PID Optimization and Integral LQR Comparison"
 authors:
   - family-names: Nazarbayev
     given-names: Nurtas
 type: report
 version: 2.0
+doi: 10.5281/zenodo.23562460
+date-released: 2026-10-22
+url: https://doi.org/10.5281/zenodo.23562460
